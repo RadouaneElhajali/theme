@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="SEO, WordPress, Web development.">
+    <meta name="author" content="Radouane Elhajali">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Radouane SEO">
+    <meta property="og:url" content="https://Radouane.me/">
+    <meta property="og:description" content="SEO, WordPress, Web development.">
+    <meta property="og:image" content="https://radouane.me/logo.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@RadouaneSEO">
+    <meta name="twitter:creator" content="@RadouaneSEO">
+    <meta name="x-build-time" content="Wed, 27 July 2022 12:53:60 +0000">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="canonical" href="https://Radouane.me/">
+    <link rel="stylesheet" href="style.css">
+    <title>Radouane SEO - SEO, WordPress, Web development</title>
+</head>
+<body>
+ <main>
+     <br> 
+    <div class="first-text">
+        <h1>Radouane SEO</h1>
+     <br>
+        <p>Awesome at SEO, Great at WordPress</p>
+    </div>
+     <br>
+     <br>
+    <video class="luffy-video" src="Luffy.mp4" controls poster="luffy video poster.jpg">Luffy saying Yo</video>
+ </main> 
+     <div>
+        <p style="font-style: normal ;" id="info"></p>
+    <p style="font-style: normal ;" id="infotime"></p>
+ 
+
+
+<script>
+
+const getBtcData = async () => { 
+  fetch('https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD')
+  .then(response => response.json())
+  .then(data => {
+  	console.log(data);
+    document.getElementById("info").innerHTML = '<b>1 BTC = ' + data.USD + ' USD</b>'
+  });
+}
+
+getBtcData();
+
+tcount=0
+setInterval(function(){
+  tcount++
+  if (tcount==10) {  getBtcData(); tcount=0}
+  document.getElementById("infotime").innerHTML = 'Next update in ' + (9-tcount) + ' seconds'
+},900);
+
+
+</script>
+     </div>
+    <footer class="footer"> <p> Made in Morocco w/ Love </p></footer>
+</body>
+</html>
